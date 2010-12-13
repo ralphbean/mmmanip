@@ -67,15 +67,38 @@ class ListManipulator(object):
         if not isinstance(addrs, list):
             raise ValueError, '`addrs` must be a list of email addresses'
 
+        loc = "%s%s" % ( self.uri, 'members/add')
+        self.br.go(loc)
+        code = self.br.get_code()
+        if code != 200:
+            raise Exception, "(Code: %i)  Failed to access %s." % (code, loc)
+
+        form = self.br.get_all_forms()[0]
+        form['subscribees'] = '\n'.join(addrs)
+        self.br.clicked(form, form.find_control('setmemberopts_btn'))
+        self.br.submit()
+        code = self.br.get_code()
+        if code != 200:
+            raise Exception, "(Code: %i)  Failed to add @ %s." % (code,loc)
+
     def unsubscribe(self, addrs):
         if not isinstance(addrs, list):
             raise ValueError, '`addrs` must be a list of email addresses'
 
-        for addr in addrs:
-            if not self.has_subscriber(addr):
-                # Fail quietly
-                print "Not removing %s.  Does not exist anyways." % addr
-                continue
+        loc = "%s%s" % ( self.uri, 'members/remove')
+        self.br.go(loc)
+        code = self.br.get_code()
+        if code != 200:
+            raise Exception, "(Code: %i)  Failed to access %s." % (code, loc)
+
+        form = self.br.get_all_forms()[0]
+        form['unsubscribees'] = '\n'.join(addrs)
+        self.br.clicked(form, form.find_control('setmemberopts_btn'))
+        self.br.submit()
+        code = self.br.get_code()
+        if code != 200:
+            raise Exception, "(Code: %i)  Failed to add @ %s." % (code,loc)
+
 
 
         
