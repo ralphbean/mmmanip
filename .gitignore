@@ -1,10 +1,10 @@
-venv-apply
+venv*
 *.pyc
 *.swp
-apply.egg-info
+mmmanip.egg-info
 ez_setup
 devdata.db
 tw2*
-virtualenv-apply
+virtualenv*
 devdata.db*
 data
