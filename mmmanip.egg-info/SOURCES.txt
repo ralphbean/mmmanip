@@ -1,9 +1,0 @@
-setup.cfg
-setup.py
-mmmanip/__init__.py
-mmmanip.egg-info/PKG-INFO
-mmmanip.egg-info/SOURCES.txt
-mmmanip.egg-info/dependency_links.txt
-mmmanip.egg-info/entry_points.txt
-mmmanip.egg-info/not-zip-safe
-mmmanip.egg-info/top_level.txt
