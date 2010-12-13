@@ -8,3 +8,4 @@ tw2*
 virtualenv*
 devdata.db*
 data
+testsc.py

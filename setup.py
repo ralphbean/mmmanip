@@ -22,6 +22,7 @@ setup(name='mmmanip',
           'twill',
           'ClientForm',
           'BeautifulSoup',
+          'urllib',
       ],
       entry_points="""
       # -*- Entry points: -*-
