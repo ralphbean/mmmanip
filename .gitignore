@@ -9,3 +9,4 @@ virtualenv*
 devdata.db*
 data
 testsc.py
+dist
