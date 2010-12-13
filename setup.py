@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1a'
+version = '0.1a1'
 
 setup(name='mmmanip',
       version=version,
@@ -22,7 +22,6 @@ setup(name='mmmanip',
           'twill',
           'ClientForm',
           'BeautifulSoup',
-          'urllib',
       ],
       entry_points="""
       # -*- Entry points: -*-
