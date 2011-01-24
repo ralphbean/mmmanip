@@ -1,6 +1,5 @@
 from twill.browser import TwillBrowser
 from BeautifulSoup import BeautifulSoup
-import ClientForm
 
 from urllib import unquote
 
@@ -60,7 +59,7 @@ class ListManipulator(object):
             field = form.find_control('user')
             found = unquote(field.attrs['value'])
             return found == addr
-        except ClientForm.ControlNotFoundError:
+        except Exception: # control not found
             return False
 
     def subscribe(self, addrs):

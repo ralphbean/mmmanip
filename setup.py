@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1a1'
+version = '0.1a2'
 
 setup(name='mmmanip',
       version=version,
@@ -20,7 +20,6 @@ setup(name='mmmanip',
       zip_safe=False,
       install_requires=[
           'twill',
-          'ClientForm',
           'BeautifulSoup',
       ],
       entry_points="""
