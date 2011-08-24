@@ -35,12 +35,12 @@ class ListManipulator(object):
 
         if code != 200:
             raise Exception, "(Code: %i)  Failed to login @ %s."%(code,self.uri)
-        
-        
+
+
     def has_subscriber(self, addr):
-        if not isinstance(addr, str):
-            raise ValueError, '`addr` must be a string (type "str")'
-        
+        if not isinstance(addr, basestring):
+            raise ValueError, '`addr` must be type "str" not %s' % str(type(addr))
+
         loc = "%s%s" % ( self.uri, 'members/list')
         self.br.go(loc)
         code = self.br.get_code()
